@@ -74,10 +74,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside)
         
+        // セル内のボタンのアクションをソースコードで設定する
+        cell.commentButton.addTarget(self, action: #selector(handleCommentButton(_:forEvent:)), for: .touchUpInside)
+        
         return cell
     }
     
-    // セル内のボタンがタップされた時に呼ばれるメソッド
+    // コメントボタンがタップされた時に呼ばれるメソッド
+    @objc func handleCommentButton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: コメントボタンがタップされました")
+        
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        let commentViewController = storyboard!.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        // commentViewController に postData を渡す
+        commentViewController.postData = postArray[indexPath!.row]
+        // コメント画面を表示
+        present(commentViewController, animated: true)
+    }
+        
+    
+    // いいねボタンがタップされた時に呼ばれるメソッド
     @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: likeボタンがタップされました")
         

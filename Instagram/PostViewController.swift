@@ -8,7 +8,6 @@
 import UIKit
 import Firebase
 import SVProgressHUD
-import FirebaseFirestore
 
 class PostViewController: UIViewController {
     var image: UIImage!
