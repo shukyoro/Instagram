@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
             // アドレスとパスワードと表示名のいずれかでも入力されていない時は何もしない
             if address.isEmpty || password.isEmpty || displayName.isEmpty {
                 print("DEBUG_PRINT: 何かが空文字です。")
-                SVProgressHUD.showError(withStatus: "サインインに失敗しました。")
+                SVProgressHUD.showError(withStatus: "必要項目を入力して下さい")
                 return
             }
             
