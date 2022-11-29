@@ -25,6 +25,7 @@ class CommentViewController: UIViewController {
         // コメントが入力されていない時は何もしない
         if textField.text!.isEmpty {
             SVProgressHUD.showError(withStatus: "コメントが入力されていません")
+            SVProgressHUD.dismiss(withDelay: 2)
             return
         }
         // ユーザー名を取得
@@ -37,6 +38,7 @@ class CommentViewController: UIViewController {
         postRef.updateData(["comments": updateValue])
         // HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "コメントしました")
+        SVProgressHUD.dismiss(withDelay: 2)
         // ホームに戻る
         self.dismiss(animated: true, completion: nil)
     }
