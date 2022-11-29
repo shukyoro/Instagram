@@ -356,7 +356,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コメント" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OX3-Hg-SVb">
                                 <rect key="frame" x="57" y="144" width="300" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="CI6-7R-ovE"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="CI6-7R-ovE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
